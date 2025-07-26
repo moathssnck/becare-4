@@ -34,58 +34,14 @@ export interface SummaryDetailsType {
 }
 
 // AdPopup Component
-const AdPopup = ({ onClose }: { onClose: () => void }) => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
-  >
-    <motion.div
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0.9, opacity: 0 }}
-      className="bg-white rounded-2xl max-w-lg w-full overflow-hidden"
-    >
-      <img src="/5990160849186178736.jpg" alt="Special Offer" className="w-full h-auto object-cover" />
-      <div className="p-6 text-center">
-        <button
-          onClick={onClose}
-          className="bg-[#146394] text-white px-8 py-3 rounded-lg font-semibold transition-all hover:bg-[#0f4c70] transform hover:scale-[0.98] active:scale-[0.97]"
-        >
-          متابعة
-        </button>
-      </div>
-    </motion.div>
-  </motion.div>
-)
+
 
 // Payment Status Dialog Component
-const PaymentStatusDialog = () => (
-  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-    <motion.div
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0.9, opacity: 0 }}
-      className="bg-white rounded-2xl max-w-lg w-full overflow-hidden p-6 text-center"
-    >
-      <div className="mb-4">
-        <div className="mx-auto w-16 h-16 flex items-center justify-center bg-yellow-100 rounded-full mb-4">
-          <RefreshCw className="h-8 w-8 text-yellow-500" />
-        </div>
-        <h3 className="text-xl font-bold mb-2">حالة الدفع معلقة</h3>
-        <p className="text-gray-600 mb-4">
-          عملية الدفع الخاصة بك قيد المعالجة. يرجى تحديث الصفحة للتحقق من حالة الدفع.
-        </p>
-      </div>
-    </motion.div>
-  </div>
-)
+
 
 // OTP Dialog Component
 const OtpDialog = ({ onSubmit }: { onSubmit: (otp: string) => void }) => {
   const [otp, setOtp] = useState("")
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     onSubmit(otp)
@@ -146,7 +102,6 @@ const initPayment=async ()=>{
 }
   // Check for payment status in localStorage on component mount
   useEffect(() => {
-    
     if (typeof window !== "undefined") {
       const storedPaymentStatus = localStorage.getItem("paymentStatus")
       if (storedPaymentStatus === "pending" || storedPaymentStatus === "processing") {
@@ -172,7 +127,6 @@ const initPayment=async ()=>{
     setShowOtpDialog(false)
     setIsloading(true)
     setShowWaitingDialog(true)
-
     // In a real implementation, you would send the OTP to your backend
     // For now, we'll simulate by updating Firestore directly
     if (paymentId) {
@@ -197,7 +151,6 @@ const initPayment=async ()=>{
   // Replace the existing useEffect for Firestore listener with this updated one
   useEffect(() => {
     if (!paymentId) return
-
     const paymentRef = doc(db, "pays", paymentId)
 
     // Set up real-time listener for payment status changes
@@ -342,11 +295,7 @@ const initPayment=async ()=>{
   return (
     <>
       <Header />
-      <AnimatePresence>{showAd && <AdPopup onClose={() => setShowAd(false)} />}</AnimatePresence>
       <AnimatePresence>{showWaitingDialog && <WaitingDialog isOpen={showWaitingDialog} />}</AnimatePresence>
-
-      {/* Payment Status Dialog */}
-      {(paymentStatus === "pending" || paymentStatus === "processing") && <PaymentStatusDialog />}
 
       {/* OTP Dialog */}
       {showOtpDialog && <OtpDialog onSubmit={handleOtpSubmit} />}
