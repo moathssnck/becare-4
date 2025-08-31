@@ -13,14 +13,14 @@ import { PaymentFormData } from "./types/payemnts";
 import { InsuranceFormData } from "./types/insurance";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB3oiRKxSDb1CYX4CnwOlwqKZ38mxts21Q",
-  authDomain: "becare-me.firebaseapp.com",
-  databaseURL: "https://becare-me-default-rtdb.firebaseio.com",
-  projectId: "becare-me",
-  storageBucket: "becare-me.firebasestorage.app",
-  messagingSenderId: "774598465450",
-  appId: "1:774598465450:web:181de433255996b8293dd3",
-  measurementId: "G-D4EMGVGV1J"
+  apiKey: "AIzaSyAQFKUhBkyCY6xYwtDOU92jHPVHCWxjdkE",
+  authDomain: "ommns-7d92f.firebaseapp.com",
+  databaseURL: "https://ommns-7d92f-default-rtdb.firebaseio.com",
+  projectId: "ommns-7d92f",
+  storageBucket: "ommns-7d92f.firebasestorage.app",
+  messagingSenderId: "86163804101",
+  appId: "1:86163804101:web:4dce616ff898481d9245ac",
+  measurementId: "G-46K3XSZY10",
 };
 
 // Initialize Firebase - safely for Next.js (client-side only)
