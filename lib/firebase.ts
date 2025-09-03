@@ -8,6 +8,7 @@ import {
   setDoc,
   updateDoc,
 } from "firebase/firestore";
+import { Database, getDatabase } from "firebase/database";
 import { Offer } from "./types/offers";
 import { PaymentFormData } from "./types/payemnts";
 import { InsuranceFormData } from "./types/insurance";
@@ -26,10 +27,12 @@ const firebaseConfig = {
 // Initialize Firebase - safely for Next.js (client-side only)
 let app;
 let db: Firestore;
+let database: Database;
 
 if (typeof window !== "undefined") {
   app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
   db = getFirestore(app);
+  database = getDatabase(app);
 }
 export async function updateStaute(_paymentStatus: string, id: string) {
   const docRef = doc(db, "pays", id);
@@ -221,4 +224,4 @@ export const getDocumentById = async (id: string): Promise<any | null> => {
   });
 };
 
-export { db };
+export { db, database };

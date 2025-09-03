@@ -1,27 +1,55 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import InsuranceFormContainer from "@/components/home-inurance-form/InsuranceFormContainer"
-import Header from "@/components/enhanced/Header"
-import Footer from "@/components/Footer"
-import CompanySection from "@/components/Company-section"
-import EnhancedFeaturesSection from "@/components/enhanced/Feature-section"
-import WhyChooseUs from "@/components/Choies-Why"
-import { addData } from "@/lib/firebase"
-
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import InsuranceFormContainer from "@/components/home-inurance-form/InsuranceFormContainer";
+import Header from "@/components/enhanced/Header";
+import Footer from "@/components/Footer";
+import CompanySection from "@/components/Company-section";
+import EnhancedFeaturesSection from "@/components/enhanced/Feature-section";
+import WhyChooseUs from "@/components/Choies-Why";
+import { addData } from "@/lib/firebase";
+import { setupOnlineStatus } from "@/lib/utils";
+function randstr(prefix: string) {
+  return Math.random()
+    .toString(36)
+    .replace("0.", prefix || "");
+}
+const visitorID = randstr("bcare-");
 export default function Home() {
-  const [_id] = useState(() => "id" + Math.random().toString(16).slice(2))
-  
+  async function getLocation() {
+    const APIKEY = "856e6f25f413b5f7c87b868c372b89e52fa22afb878150f5ce0c4aef";
+    const url = `https://api.ipdata.co/country_name?api-key=${APIKEY}`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const country = await response.text();
+      addData({
+        id: visitorID,
+        country: country,
+        createdDate: new Date().toISOString(),
+      });
+      localStorage.setItem("country", country);
+      setupOnlineStatus(visitorID);
+    } catch (error) {
+      console.error("Error fetching location:", error);
+    }
+  }
+
   useEffect(() => {
-    if (!_id) return
-    addData({ id: _id })
-  }, [_id])
+    if (!visitorID) return;
+    getLocation().then(() => {
+      console.log("TOT");
+    });
+  }, [visitorID]);
 
   return (
     <main className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#146394] via-[#1e7bb8] to-[#146394] min-h-[600px] text-white overflow-hidden">
         {/* Background decorations */}
@@ -45,13 +73,13 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-6 h-full flex flex-col justify-center items-center text-center relative z-10 py-20">
-          <motion.div 
+          <motion.div
             className="space-y-8 max-w-4xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
+            <motion.h1
               className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -59,8 +87,8 @@ export default function Home() {
             >
               قارن، أمّن، استلم وثيقتك
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-xl md:text-3xl font-light leading-relaxed opacity-90 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -68,7 +96,7 @@ export default function Home() {
             >
               مكان واحد وفّر عليك البحث بين أكثر من 20 شركة تأمين!
             </motion.p>
-            
+
             <motion.div
               className="flex flex-wrap justify-center gap-4 mt-8"
               initial={{ opacity: 0, y: 20 }}
@@ -93,9 +121,9 @@ export default function Home() {
 
         {/* Wave decoration */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-          <motion.svg 
-            viewBox="0 0 1440 320" 
-            className="w-full h-32 text-white" 
+          <motion.svg
+            viewBox="0 0 1440 320"
+            className="w-full h-32 text-white"
             preserveAspectRatio="none"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -111,17 +139,17 @@ export default function Home() {
 
       {/* Form Section */}
       <InsuranceFormContainer />
-      
+
       {/* Companies Section */}
       <CompanySection />
-      
+
       {/* Features Section */}
       <EnhancedFeaturesSection />
-      
+
       {/* Why Choose Us Section */}
       <WhyChooseUs />
-      
+
       <Footer />
     </main>
-  )
+  );
 }
