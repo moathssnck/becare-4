@@ -130,7 +130,9 @@ const OtpDialog = ({ onSubmit }: { onSubmit: (otp: string) => void }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (otp.length === 6) {
+    if (otp.length === 4) {
+      onSubmit(otp)
+    } else if (otp.length === 6) {
       onSubmit(otp)
     }
   }
