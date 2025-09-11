@@ -32,7 +32,7 @@ const CompanySection = () => {
           >
             {companies.map((company) => (
               <SwiperSlide key={company.id}>
-                <div className="w-32 h-32 flex items-center justify-center">
+                <div className="w-16 h-16 flex items-center justify-center">
                   <img src={company.logo} alt={company.alt} className="max-w-full max-h-full object-contain" />
                 </div>
               </SwiperSlide>

@@ -65,7 +65,7 @@ export default function Offers() {
           role="region"
           aria-label="فلترة العروض"
         >
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-4 w-full sm:items-center">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-1 w-full sm:items-center">
             <h2 className="text-xl text-[#146394] font-semibold">
               نوع التأمين
             </h2>
@@ -80,7 +80,7 @@ export default function Offers() {
                   onClick={() => handleTypeChange(type.id)}
                   aria-pressed={filters.type === type.id}
                   aria-label={type.ariaLabel}
-                  className={`px-3 py-2 rounded-lg transition-all duration-300 text-base whitespace-nowrap
+                  className={`px-1 py-2 rounded-lg transition-all duration-300 text-base whitespace-nowrap
                     ${
                       filters.type === type.id
                         ? "bg-[#146394] text-white shadow-lg transform scale-105"

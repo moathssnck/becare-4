@@ -128,7 +128,7 @@ html {
 }
 
 .form-input {
-  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#146394] focus:ring-2 focus:ring-[#146394]/20 transition-all duration-200 outline-none;
+  @apply w-full px-4 py-1 border-2 border-gray-200 rounded-lg focus:border-[#146394] focus:ring-2 focus:ring-[#146394]/20 transition-all duration-200 outline-none;
 }
 
 .form-input.error {
@@ -141,11 +141,11 @@ html {
 
 /* Enhanced button styles */
 .btn-primary {
-  @apply bg-[#146394] text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-[#0f4c70] hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
+  @apply bg-[#146394] text-white font-semibold py-1 px-6 rounded-lg shadow-lg hover:bg-[#0f4c70] hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
 }
 
 .btn-secondary {
-  @apply bg-gray-100 text-gray-700 font-semibold py-3 px-6 rounded-lg hover:bg-gray-200 transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
+  @apply bg-gray-100 text-gray-700 font-semibold py-1 px-6 rounded-lg hover:bg-gray-200 transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
 }
 
 /* Enhanced modal styles */
@@ -159,7 +159,7 @@ html {
 
 /* Enhanced notification styles */
 .notification {
-  @apply fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transform transition-all duration-300;
+  @apply fixed top-1 right-4 z-50 p-1 rounded-lg shadow-lg transform transition-all duration-300;
 }
 
 .notification.success {

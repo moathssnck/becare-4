@@ -134,7 +134,7 @@ export default function OfferCard({ offer }: OfferProps) {
     <div className="bg-white container mx-auto rounded-xl overflow-hidden border border-gray-100 hover:border-blue-200 transition-all duration-300">
       <div className="relative flex flex-col lg:flex-row">
         {/* Company Logo Section */}
-        <div className="w-full lg:w-1/4 p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center bg-gray-50">
+        <div className="w-full lg:w-1/4 p-1 sm:p-6 lg:p-8 flex flex-col items-center justify-center bg-gray-50">
           <span
             className="mb-4 relative inline-block px-4 sm:px-6 py-1.5 sm:py-2 text-sm font-bold text-white 
             bg-gradient-to-r from-blue-600 to-blue-400 shadow-lg rounded-full
@@ -151,14 +151,14 @@ export default function OfferCard({ offer }: OfferProps) {
         </div>
 
         {/* Features Section */}
-        <div className="w-full lg:w-2/4 p-4 sm:p-6">
+        <div className="w-full lg:w-2/4 p-1 sm:p-6">
           <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-gray-800 border-b pb-3">المنافع الإضافية</h3>
           <div className="space-y-3 sm:space-y-4">
             {/* Feature items with responsive spacing */}
             {offer.extra_features.map((feature, index) => (
               <label
                 key={index}
-                className={`flex items-center p-3 sm:p-4 rounded-lg transition-all duration-200 ${
+                className={`flex items-center p-3 sm:p-1 rounded-lg transition-all duration-200 ${
                   feature.price === 0 ? "bg-[#ddd]/50 cursor-default" : "hover:bg-gray-50 cursor-pointer"
                 }`}
               >
@@ -183,7 +183,7 @@ export default function OfferCard({ offer }: OfferProps) {
         </div>
 
         {/* Price Section */}
-        <div className="w-full lg:w-1/4 p-4 sm:p-6 lg:p-8 bg-gradient-to-b from-gray-50 to-white flex flex-col justify-center border-t lg:border-t-0 lg:border-r">
+        <div className="w-full lg:w-1/4 p-1 sm:p-6 lg:p-8 bg-gradient-to-b from-gray-50 to-white flex flex-col justify-center border-t lg:border-t-0 lg:border-r">
           <div className="text-center space-y-4 sm:space-y-6">
             <div>
               <span className="block text-xs sm:text-sm text-gray-500 mb-2">السعر النهائي</span>
@@ -192,7 +192,7 @@ export default function OfferCard({ offer }: OfferProps) {
             <button
               onClick={handleOfferSelection}
               disabled={isProcessing}
-              className="w-full sm:w-2/3 lg:w-1/2 bg-blue-50 hover:bg-[#ff9000] active:bg-[#f08800] text-white font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full sm:w-2/3 lg:w-1/2 bg-blue-50 hover:bg-[#ff9000] active:bg-[#f08800] text-white font-bold py-1 sm:py-4 px-4 sm:px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isProcessing ? (
                 <div className="flex items-center justify-center gap-2">

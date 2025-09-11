@@ -52,7 +52,7 @@ export default function EnhancedFeaturesSection() {
     <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/20 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#146394]/10 to-[#1e7bb8]/10 rounded-full blur-3xl" />
+        <div className="absolute -top-10 -right-40 w-80 h-80 bg-gradient-to-br from-[#146394]/10 to-[#1e7bb8]/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#146394]/10 to-[#1e7bb8]/10 rounded-full blur-3xl" />
       </div>
 
@@ -117,7 +117,7 @@ export default function EnhancedFeaturesSection() {
             <h3 className="text-2xl font-bold mb-4">جاهز لحماية مركبتك؟</h3>
             <p className="text-blue-100 mb-6">احصل على أفضل عروض التأمين في دقائق معدودة</p>
             <motion.button
-              className="bg-white text-[#146394] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+              className="bg-white text-[#146394] px-8 py-1 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

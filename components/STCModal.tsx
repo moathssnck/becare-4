@@ -19,7 +19,7 @@ export const STCModal = ({ isOpen, onClose }: STCModalProps) => {
           <div className="w-full flex justify-end mb-4"></div>
 
           {/* Icon or Logo could be added here */}
-          <div className="bg-[#146394] rounded-full p-4 mb-6">
+          <div className="bg-[#146394] rounded-full p-1 mb-6">
             <PhoneIcon className="w-12 h-12 text-[#eee]" />
           </div>
 
@@ -29,7 +29,7 @@ export const STCModal = ({ isOpen, onClose }: STCModalProps) => {
               سيتم الاتصال بك من قبل 900 يرجى الرد علي الاتصال والضغط علي الرقم 5 للاستمرار
             </p>
           </div>
-          <button onClick={onClose} className="text-[white] bg-[#146394] px-4 py-3 mt-6 rounded-lg ml-auto">
+          <button onClick={onClose} className="text-[white] bg-[#146394] px-4 py-1 mt-6 rounded-lg ml-auto">
             تأكيد
           </button>
         </div>

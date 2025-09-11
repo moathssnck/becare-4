@@ -19,10 +19,10 @@ const VehicleRegistration: React.FC<Props> = ({ formData, setFormData, errors, d
       whileHover={{ scale: 1.02 }}
       className="bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:shadow-lg"
     >
-      <h3 className="text-2xl font-bold text-[#146394] mb-6 pb-3 border-b-2 border-[#146394]">نوع تسجيل المركبة</h3>
+      <h3 className="text-md font-bold text-[#146394] mb-6 pb-3 border-b-2 border-[#146394]">نوع تسجيل المركبة</h3>
 
       <div className="space-y-6">
-        <div className="flex gap-4 mb-4">
+        <div className="flex gap-1 mb-4">
           {[
             { value: "registration", label: "استمارة" },
             { value: "customs", label: "بطاقة جمركية" },
@@ -43,7 +43,7 @@ const VehicleRegistration: React.FC<Props> = ({ formData, setFormData, errors, d
                 className="hidden"
               />
               <span
-                className={`block text-center py-3 rounded-lg transition-all duration-200 cursor-pointer
+                className={`block text-center py-1 rounded-lg transition-all duration-200 cursor-pointer
                   ${
                     formData.vehicle_type === option.value
                       ? "bg-[#146394] text-white shadow-lg transform scale-105"
@@ -58,7 +58,7 @@ const VehicleRegistration: React.FC<Props> = ({ formData, setFormData, errors, d
         </div>
 
         {/* Dynamic Fields Based on Vehicle Type */}
-        <div className="space-y-4">
+        <div className="space-y-4 text-sm">
           {formData.vehicle_type === "registration" ? (
             <>
               <div>
@@ -73,7 +73,7 @@ const VehicleRegistration: React.FC<Props> = ({ formData, setFormData, errors, d
                       phone: onlyNumbers(e.target.value),
                     }))
                   }
-                  className={`w-full px-4 py-3 border-2 rounded-lg ${
+                  className={`w-full px-4 py-1 border-2 rounded-lg ${
                     errors.phone ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="أدخل رقم الهاتف"
@@ -91,7 +91,7 @@ const VehicleRegistration: React.FC<Props> = ({ formData, setFormData, errors, d
                       serial_number: onlyNumbers(e.target.value),
                     }))
                   }
-                  className={`w-full px-4 py-3 border-2 rounded-lg ${
+                  className={`w-full px-4 py-1 border-2 rounded-lg ${
                     errors.serial_number ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="أدخل الرقم التسلسلي للمركبة"
@@ -112,7 +112,7 @@ const VehicleRegistration: React.FC<Props> = ({ formData, setFormData, errors, d
                       vehicle_manufacture_number: onlyNumbers(e.target.value),
                     }))
                   }
-                  className={`w-full px-4 py-3 border-2 rounded-lg ${
+                  className={`w-full px-4 py-1 border-2 rounded-lg ${
                     errors.vehicle_manufacture_number ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="أدخل رقم صنع المركبة"
@@ -132,7 +132,7 @@ const VehicleRegistration: React.FC<Props> = ({ formData, setFormData, errors, d
                       customs_code: onlyNumbers(e.target.value),
                     }))
                   }
-                  className={`w-full px-4 py-3 border-2 rounded-lg ${
+                  className={`w-full px-4 py-1 border-2 rounded-lg ${
                     errors.customs_code ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="أدخل رقم البطاقة الجمركية"

@@ -35,7 +35,7 @@ export const SummaryItem = ({
   )
   
   export const VatNotice = () => (
-    <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100 transition-all duration-300 hover:bg-blue-100">
+    <div className="mt-6 p-1 bg-blue-50 rounded-lg border border-blue-100 transition-all duration-300 hover:bg-blue-100">
       <div className="flex items-center gap-2">
         <svg className="w-5 h-5 text-[#146394] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
           <path

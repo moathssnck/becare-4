@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-slate-300 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-1">
             <div className="flex gap-6">
               <p className="text-sm">© {new Date().getFullYear()} بي كير. جميع الحقوق محفوظة</p>
             </div>

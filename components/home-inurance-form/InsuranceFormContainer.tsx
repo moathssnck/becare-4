@@ -91,7 +91,7 @@ const InsuranceFormContainer: React.FC = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="px-4 -mt-24 relative z-20"
+        className="px-1 -mt-24 relative z-20"
       >
         <div className="container mx-auto">
           <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 md:p-10 shadow-2xl">
@@ -106,7 +106,7 @@ const InsuranceFormContainer: React.FC = () => {
             </div>
 
             <div className="mt-6 md:mt-8 pt-4 border-t-2 border-gray-200">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-1">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
@@ -126,7 +126,7 @@ const InsuranceFormContainer: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="w-full md:w-auto bg-[#146394] text-white font-bold py-3 px-10 rounded-lg
+                  className="w-full md:w-auto bg-[#146394] text-white font-bold py-1 px-10 rounded-lg
                     transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
                 >
                   متابعة

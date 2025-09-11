@@ -12,7 +12,7 @@ export const BankVerificationModal: FC<BankVerificationModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-1 bg-black/50 backdrop-blur-sm">
       <div className="bg-white rounded-2xl max-w-lg w-full p-6 text-center space-y-6">
         <img
           src="/icons/mada.svg"
@@ -31,7 +31,7 @@ export const BankVerificationModal: FC<BankVerificationModalProps> = ({
 
         <button
           onClick={onClose}
-          className="bg-[#146394] text-white px-8 py-3 rounded-lg font-semibold transition-all hover:bg-[#0f4c70] transform hover:scale-[0.98]"
+          className="bg-[#146394] text-white px-8 py-1 rounded-lg font-semibold transition-all hover:bg-[#0f4c70] transform hover:scale-[0.98]"
         >
           فهمت
         </button>

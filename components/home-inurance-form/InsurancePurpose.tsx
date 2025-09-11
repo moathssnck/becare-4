@@ -28,11 +28,11 @@ const InsurancePurpose: React.FC<Props> = ({ formData, setFormData, errors }) =>
   }
 
   return (
-    <motion.div whileHover={{ scale: 1.02 }} className="bg-gray-50 rounded-xl p-6">
-      <h3 className="text-2xl font-bold text-[#146394] mb-6 pb-3 border-b-2">الغرض من التأمين</h3>
+    <motion.div whileHover={{ scale: 1.02 }} className="bg-gray-50 rounded-xl p-4">
+      <h3 className="text-md font-bold text-[#146394] mb-6 pb-3 border-b-2">الغرض من التأمين</h3>
 
-      <div className="space-y-6">
-        <div className="flex gap-4">
+      <div className="space-y-6 text-sm" >
+        <div className="flex gap-1">
           {[
             { value: "renewal", label: "تأمين جديد" },
             { value: "property-transfer", label: "نقل ملكية" },
@@ -47,7 +47,7 @@ const InsurancePurpose: React.FC<Props> = ({ formData, setFormData, errors }) =>
                 className="hidden"
               />
               <span
-                className={`block text-center py-3 rounded-lg transition-all duration-200 cursor-pointer
+                className={`block text-center py-1 rounded-lg transition-all duration-200 cursor-pointer
                 ${
                   formData.insurance_purpose === option.value
                     ? "bg-[#146394] text-white shadow-lg transform scale-105"
@@ -73,7 +73,7 @@ const InsurancePurpose: React.FC<Props> = ({ formData, setFormData, errors }) =>
                   documment_owner_full_name: e.target.value,
                 }))
               }
-              className={`w-full px-4 py-3 border-2 rounded-lg ${
+              className={`w-full px-2 py-1 border-2 rounded-lg ${
                 errors.documment_owner_full_name ? "border-red-500" : "border-gray-300"
               }`}
               placeholder="أدخل اسم مالك الوثيقة بالكامل"
@@ -96,7 +96,7 @@ const InsurancePurpose: React.FC<Props> = ({ formData, setFormData, errors }) =>
                     owner_identity_number: onlyNumbers(e.target.value),
                   }))
                 }
-                className={`w-full px-4 py-3 border-2 rounded-lg ${
+                className={`w-full px-4 py-1 border-2 rounded-lg ${
                   errors.owner_identity_number ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="أدخل رقم الهوية"
@@ -119,7 +119,7 @@ const InsurancePurpose: React.FC<Props> = ({ formData, setFormData, errors }) =>
                       buyer_identity_number: onlyNumbers(e.target.value),
                     }))
                   }
-                  className={`w-full px-4 py-3 border-2 rounded-lg ${
+                  className={`w-full px-4 py-1 border-2 rounded-lg ${
                     errors.buyer_identity_number ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="أدخل رقم هوية المشتري"
@@ -139,7 +139,7 @@ const InsurancePurpose: React.FC<Props> = ({ formData, setFormData, errors }) =>
                       seller_identity_number: onlyNumbers(e.target.value),
                     }))
                   }
-                  className={`w-full px-4 py-3 border-2 rounded-lg ${
+                  className={`w-full px-4 py-1 border-2 rounded-lg ${
                     errors.seller_identity_number ? "border-red-500" : "border-gray-300"
                   }`}
                   placeholder="أدخل رقم هوية البائع"

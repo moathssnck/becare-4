@@ -165,7 +165,7 @@ export default function EnhancedOffers() {
                     placeholder="ابحث عن شركة أو نوع التأمين..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#146394] focus:border-transparent text-right"
+                    className="w-full pl-10 pr-4 py-1 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#146394] focus:border-transparent text-right"
                   />
                 </div>
 
@@ -205,7 +205,7 @@ export default function EnhancedOffers() {
                 </div>
 
                 {/* Sort and Clear */}
-                <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
+                <div className="flex flex-col md:flex-row gap-1 justify-between items-center">
                   <div className="flex items-center gap-2">
                     <SortAsc className="w-5 h-5 text-gray-500" />
                     <select

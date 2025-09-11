@@ -209,7 +209,7 @@ export default function EnhancedOfferCard({ offer }: OfferProps) {
                 {offer.extra_features.map((feature, index) => (
                   <motion.label
                     key={index}
-                    className={`flex items-center p-4 rounded-lg transition-all duration-200 border ${
+                    className={`flex items-center p-1 rounded-lg transition-all duration-200 border ${
                       feature.price === 0
                         ? "bg-green-50 border-green-200 cursor-default"
                         : selectedFeatures.includes(index)

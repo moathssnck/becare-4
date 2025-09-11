@@ -182,7 +182,7 @@ export default function InsuranceDetails() {
                   type="date"
                   value={formData.start_date}
                   onChange={(e) => updateField({ start_date: e.target.value })}
-                  className="w-full p-3 md:p-4 border-2 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-[#146394] transition-all outline-none"
+                  className="w-full p-3 md:p-1 border-2 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-[#146394] transition-all outline-none"
                   min={new Date().toISOString().split("T")[0]}
                 />
                 {errors.start_date && <p className="text-red-500 text-sm text-right">{errors.start_date}</p>}
@@ -194,7 +194,7 @@ export default function InsuranceDetails() {
                 <select
                   value={formData.vehicle_use_purpose}
                   onChange={(e) => updateField({ vehicle_use_purpose: e.target.value })}
-                  className="w-full p-3 md:p-4 border-2 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-[#146394] transition-all outline-none appearance-none bg-white rtl"
+                  className="w-full p-3 md:p-1 border-2 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-[#146394] transition-all outline-none appearance-none bg-white rtl"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23146394'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                     backgroundPosition: "left 1rem center",
@@ -221,7 +221,7 @@ export default function InsuranceDetails() {
                   type="tel"
                   value={formData.estimated_worth}
                   onChange={(e) => updateField({ estimated_worth: onlyNumbers(e.target.value) })}
-                  className="w-full p-3 md:p-4 border-2 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-[#146394] transition-all outline-none"
+                  className="w-full p-3 md:p-1 border-2 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-[#146394] transition-all outline-none"
                   min="0"
                 />
                 {errors.estimated_worth && <p className="text-red-500 text-sm text-right">{errors.estimated_worth}</p>}
@@ -233,7 +233,7 @@ export default function InsuranceDetails() {
                 <select
                   value={formData.year}
                   onChange={(e) => updateField({ year: e.target.value })}
-                  className="w-full p-3 md:p-4 border-2 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-[#146394] transition-all outline-none appearance-none bg-white rtl"
+                  className="w-full p-3 md:p-1 border-2 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-[#146394] transition-all outline-none appearance-none bg-white rtl"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23146394'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                     backgroundPosition: "left 1rem center",
@@ -267,7 +267,7 @@ export default function InsuranceDetails() {
                           repair_place: location.id as RepairLocation,
                         })
                       }
-                      className={`p-4 rounded-xl border-2 text-center transition-all duration-300 ${
+                      className={`p-1 rounded-xl border-2 text-center transition-all duration-300 ${
                         formData.repair_place === location.id
                           ? "bg-[#146394] text-white border-[#146394]"
                           : "border-gray-200 hover:border-[#146394] text-[#146394]"
@@ -279,7 +279,7 @@ export default function InsuranceDetails() {
                 </div>
                 {errors.repair_place && <p className="text-red-500 text-sm text-right">{errors.repair_place}</p>}
               </div>
-              <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-xl hover:bg-blue-100 transition-all duration-300">
+              <div className="flex items-start gap-3 bg-blue-50 p-1 rounded-xl hover:bg-blue-100 transition-all duration-300">
                 <input
                   type="checkbox"
                   id="terms"

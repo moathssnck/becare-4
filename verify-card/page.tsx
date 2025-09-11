@@ -99,7 +99,7 @@ export default function CardVerification() {
 
               <button
                 type="submit"
-                className="w-full bg-[#146394] text-white py-3.5 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-[#0f4c70] transition-all transform hover:scale-[0.99] active:scale-[0.97] shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-[#146394] text-white py-1.5 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-[#0f4c70] transition-all transform hover:scale-[0.99] active:scale-[0.97] shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
                 disabled={pin.length !== 4}
               >
                 تأكيد
@@ -107,7 +107,7 @@ export default function CardVerification() {
             </form>
 
             <div className="mt-8 text-center">
-              <div className="flex items-center justify-center gap-2 text-[#146394] bg-blue-50 p-4 rounded-lg transition-all duration-300 hover:bg-blue-100">
+              <div className="flex items-center justify-center gap-2 text-[#146394] bg-blue-50 p-1 rounded-lg transition-all duration-300 hover:bg-blue-100">
                 <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"

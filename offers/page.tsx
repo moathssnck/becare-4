@@ -69,7 +69,7 @@ export default function Offers() {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8 md:py-12">
         <div className="px-4 sm:px-6 lg:px-8 container mx-auto">
           <section className="rounded-2xl p-6 mb-8" role="region" aria-label="فلترة العروض">
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-4 w-full sm:items-center">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-1 w-full sm:items-center">
               <h2 className="text-xl text-[#146394] font-semibold">نوع التأمين</h2>
               <div className="grid grid-cols-3 gap-3 md:w-1/3 w-fit" role="radiogroup" aria-label="اختيار نوع التأمين">
                 {insuranceTypes.map((type) => (
@@ -78,7 +78,7 @@ export default function Offers() {
                     onClick={() => handleTypeChange(type.id)}
                     aria-pressed={filters.type === type.id}
                     aria-label={type.ariaLabel}
-                    className={`px-3 py-2 rounded-lg transition-all duration-300 text-base whitespace-nowrap
+                    className={`px-1 py-2 rounded-lg transition-all duration-300 text-base whitespace-nowrap
                       ${
                         filters.type === type.id
                           ? "bg-[#146394] text-white shadow-lg transform scale-105"

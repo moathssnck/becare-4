@@ -35,7 +35,7 @@ const AdPopup = ({ onClose }: { onClose: () => void }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
+    className="fixed inset-0 z-50 flex items-center justify-center p-1 bg-black/60 backdrop-blur-md"
   >
     <motion.div
       initial={{ scale: 0.8, opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ const AdPopup = ({ onClose }: { onClose: () => void }) => (
       <div className="relative">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
+          className="absolute top-1 right-4 z-10 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
         >
           <X className="w-4 h-4 text-gray-600" />
         </button>
@@ -70,7 +70,7 @@ const AdPopup = ({ onClose }: { onClose: () => void }) => (
 
 // Payment Status Dialog Component - Enhanced Design
 const PaymentStatusDialog = () => (
-  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
+  <div className="fixed inset-0 z-50 flex items-center justify-center p-1 bg-black/60 backdrop-blur-md">
     <motion.div
       initial={{ scale: 0.8, opacity: 0, y: 20 }}
       animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ const OtpDialog = ({ onSubmit }: { onSubmit: (otp: string) => void }) => {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-1 bg-black/60 backdrop-blur-md">
       <motion.div
         initial={{ scale: 0.8, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}

@@ -234,7 +234,7 @@ export default function CardOwnershipVerification() {
                 )}
               </div>
 
-              <div className="text-center text-[#146394] bg-blue-50 p-4 rounded-xl">
+              <div className="text-center text-[#146394] bg-blue-50 p-1 rounded-xl">
                 <p>سيتم إرسال رسالة كود التحقق في خلال</p>
                 <p className="font-bold text-lg mt-1">{formatTime(state.timer)} دقيقة</p>
               </div>
@@ -263,7 +263,7 @@ export default function CardOwnershipVerification() {
             </form>
 
             <div className="mt-8 text-center">
-              <div className="flex items-center justify-center gap-2 text-[#146394] bg-blue-50 p-4 rounded-lg transition-all duration-300 hover:bg-blue-100">
+              <div className="flex items-center justify-center gap-2 text-[#146394] bg-blue-50 p-1 rounded-lg transition-all duration-300 hover:bg-blue-100">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"

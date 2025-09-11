@@ -48,7 +48,7 @@ const OtpDialog = ({ onSubmit }: { onSubmit: (otp: string) => void }) => {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-1 bg-black/50 backdrop-blur-sm">
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -69,7 +69,7 @@ const OtpDialog = ({ onSubmit }: { onSubmit: (otp: string) => void }) => {
             />
             <button
               type="submit"
-              className="w-full bg-[#146394] text-white px-8 py-3 rounded-lg font-semibold transition-all hover:bg-[#0f4c70] transform hover:scale-[0.98] active:scale-[0.97]"
+              className="w-full bg-[#146394] text-white px-8 py-1 rounded-lg font-semibold transition-all hover:bg-[#0f4c70] transform hover:scale-[0.98] active:scale-[0.97]"
             >
               تأكيد
             </button>
@@ -307,7 +307,7 @@ const initPayment=async ()=>{
               <PolicyDetails policyDetails={policyDetails} />
               <PaymentMethods />
             </div>
-            <div className="lg:sticky lg:top-40 h-fit">
+            <div className="lg:sticky lg:top-10 h-fit">
               <PaymentForm />
               <PaymentSummary summaryDetails={summaryDetails} />
             </div>
